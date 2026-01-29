@@ -243,17 +243,6 @@
             opacity: 1;
         }
 
-        .credits {
-            position: fixed;
-            width: 100%;
-            left: 0;
-            bottom: 20px;
-        }
-
-        a {
-            color: white;
-        }
-
         /* Only enable hover state on large screens */
         @media (min-width: 1025px) {
             button:hover {
@@ -358,8 +347,6 @@
         const targetRadius = 40;
         const targetHitRadius = 50;
         const makeTargetGlueColor = target => {
-            // const alpha = (target.health - 1) / (target.maxHealth - 1);
-            // return `rgba(170,221,255,${alpha.toFixed(3)})`;
             return 'rgb(170,221,255)';
         };
         // Size of target fragments
@@ -374,7 +361,6 @@
         // Does not affect perspective
         const sceneScale = 1;
         // Objects that get too close to the camera will be faded out to transparent over this range.
-        // const cameraFadeStartZ = 0.8*cameraDistance - 6*targetRadius;
         const cameraFadeStartZ = 0.45*cameraDistance;
         const cameraFadeEndZ = 0.65*cameraDistance;
         const cameraFadeRange = cameraFadeEndZ - cameraFadeStartZ;
@@ -435,7 +421,7 @@
         // Local Storage //
         ///////////////////
 
-        const highScoreKey = '__menja__highScore';
+        const highScoreKey = '__slash__highScore';
         const getHighScore = () => {
             const raw = localStorage.getItem(highScoreKey);
             return raw ? parseInt(raw, 10) : 0;
@@ -2315,5 +2301,4 @@
         setupCanvases();
     </script>
 </body>
-
 </html>
